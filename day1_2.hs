@@ -2,10 +2,10 @@ module Main where
 import Data.Char ( digitToInt, isDigit )
 
 main :: IO ()
-main = do solvePuzzle []
+main = do solve_1_2 []
 
-solvePuzzle :: [Int] -> IO ()
-solvePuzzle ls = getLine >>= \input -> if null input then print (sum ls) else solvePuzzle (10 * findFirstTypedNumber input + findFirstTypedNumberRev (reverse input) : ls)
+solve_1_2 :: [Int] -> IO ()
+solve_1_2 ls = getLine >>= \input -> if null input then print (sum ls) else solve_1_2 (10 * findFirstTypedNumber input + findFirstTypedNumberRev (reverse input) : ls)
 
 findFirstTypedNumber :: String -> Int 
 findFirstTypedNumber [] = 0 
